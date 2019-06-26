@@ -12,6 +12,7 @@ class Board
         }
     end
 
+
 # display function  for board display
     def display
         puts "+-------------------+"
@@ -50,3 +51,34 @@ def board_full
     return true
 
 end
+
+# winner is checked through
+# In tictactoe winner is determined 
+# if all elements of row is same so -------->winner_row
+# if all elements of column is same ----------->winner_col
+# if elements of diagoal elemnts are matched ------->winner_daigonal
+
+# There may be condition where noone is winner
+
+# winner fucntion
+
+def winner
+    winner=winner_row()
+    if winner
+        return winner
+    end
+
+    winner=winner_col()
+    if winner
+        return winner
+    end
+    
+    winner=winner_daigonal()
+    if winner 
+        return winner
+    end
+
+    # if no winner 
+    return "noone wins"
+end
+
