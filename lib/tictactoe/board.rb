@@ -166,4 +166,18 @@ def ask_player_for_move(current_player)
   end
 end
 
+# now we have to define validate_postion 
+
+def validate_position(row,col)
+  if row<=@board.size and col <=@board.size
+    if @board[row][col]==EMPTY_POS
+      return true
+      else
+        puts "position is occupied"
+      end
+    else
+      puts "invalid position"
+    end
+    return false
+end
 
