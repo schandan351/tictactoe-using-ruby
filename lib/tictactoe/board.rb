@@ -12,4 +12,27 @@ class Board
         }
     end
 
+    def display
+        puts "+-------------------+"
+
+        for row in 0..BOARD_MAX_INDEX
+            print '|'
+            for col in 0..BOARD_MAX_INDEX
+                s=@board[row][col]
+                if s==EMPTY_POS
+                    print col+(row*3)+1
+                else
+                    print s
+                end
+                print "|"
+            end
+           puts "" 
+        end
+        print "\n+--------------+"
+
+    end
 end
+
+
+b=Board.new(1)
+b.display
