@@ -21,14 +21,14 @@ class Board
             print '|'
             for col in 0..BOARD_MAX_INDEX
                 s=@board[row][col]
-                # if s==EMPTY_POS
-                #     # print col+(row*3)+1
-                # else
-                #     print s
-                # end
+                if s==EMPTY_POS
+                    print col+(row*3)+1
+                else
+                    print s
+                end
                 print "|"
             end
-           puts "" 
+           puts ""
         end
         print "\n+--------------+"
 
@@ -78,7 +78,7 @@ class Board
       end
 
       # if no winner 
-      return "noone wins"
+      return 
   end
 
 
@@ -153,10 +153,10 @@ class Board
   def ask_player_for_move(current_player)
     played=false
     while not played
-      puts "player" +current_player +"where would you like to play"
+      puts "player" +current_player +"where would you like to play your move:="
       move=gets.to_i-1
       col= move % @board.size
-      row=(move-col) % @board.size
+      row=(move-col) / @board.size
 
       if validate_position(row,col)
         @board[row][col]=current_player
