@@ -116,3 +116,37 @@ def winner_col
   end
   return 
 end
+
+#for diagonnal winner we have to check board[0][0],board[1][1] and [2][2] elements
+# and for reverse diagonal we have to check board[0][max_index_of_board],board[1][max_index_of_board-1],board[2][max_index_of_board-2]
+
+def winner_daigonal
+  first_symbol=@board[0][0]
+    for index in 1..BOARD_MAX_INDEX
+      if first_symbol !=@board[index][index]
+        break
+      elsif index==BOARD_MAX_INDEX and first_symbol!=EMPTY_POS
+        return first_symbol
+      end
+    end
+
+    
+    first_symbol=@board[0][BOARD_MAX_INDEX]
+    row_index=0
+    col_index=BOARD_MAX_INDEX
+
+    while  row_index < BOARD_MAX_INDEX
+      row_index+=1
+      col_index-=1
+
+      if first_symbol !=@board[row_index][col_index]
+        break
+      elsif row_index==BOARD_MAX_INDEX and first_symbol!=EMPTY_POS
+        return first_symbol
+      end
+      
+    end
+    return 
+end
+
+
