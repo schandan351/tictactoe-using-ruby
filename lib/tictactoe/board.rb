@@ -32,7 +32,3 @@ class Board
 
     end
 end
-
-
-b=Board.new(1)
-b.display
