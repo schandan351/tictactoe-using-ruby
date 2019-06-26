@@ -149,4 +149,21 @@ def winner_daigonal
     return 
 end
 
+# ask player for move
+
+def ask_player_for_move(current_player)
+  played=false
+  while not played
+    puts "player" +current_player +"where would you like to play"
+    move=gets.to_i-1
+    col= move % @board.size
+    row=(move-col) % @board.size
+
+    if validate_position(row,col)
+      @board[row][col]=current_player
+      played=true
+    end
+  end
+end
+
 
