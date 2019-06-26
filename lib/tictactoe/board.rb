@@ -21,11 +21,11 @@ class Board
             print '|'
             for col in 0..BOARD_MAX_INDEX
                 s=@board[row][col]
-                if s==EMPTY_POS
-                    print col+(row*3)+1
-                else
-                    print s
-                end
+                # if s==EMPTY_POS
+                #     # print col+(row*3)+1
+                # else
+                #     print s
+                # end
                 print "|"
             end
            puts "" 
