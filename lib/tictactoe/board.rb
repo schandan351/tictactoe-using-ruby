@@ -99,3 +99,20 @@ def winner_row
     return 
 end
 
+# same as winner_row we have to define winner_col
+
+def winner_col
+  for col_index in 0..BOARD_MAX_INDEX
+    first_symbol=@board[0][col_index]
+
+    for row_index in 1..BOARD_MAX_INDEX
+      if first_symbol !=@board[row_index][col_index]
+        break
+      elsif
+        row_index == BOARD_MAX_INDEX and first_symbol !=EMPTY_POS
+        return first_symbol
+      end
+    end
+  end
+  return 
+end
