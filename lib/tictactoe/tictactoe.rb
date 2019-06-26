@@ -11,7 +11,7 @@ current_player=players[rand(2)]
 b=Board.new(current_player)
 b.display
 
-while b.not_full() and not b.winner()
+while b.board_full() and not b.winner()
     b.ask_player_for_move(current_player)
     current_player=b.get_next_turn()
     b.display()

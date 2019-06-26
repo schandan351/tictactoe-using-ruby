@@ -12,6 +12,7 @@ class Board
         }
     end
 
+# display function  for board display
     def display
         puts "+-------------------+"
 
@@ -31,4 +32,21 @@ class Board
         print "\n+--------------+"
 
     end
+end
+
+# not_full function
+
+def board_full
+    # check every rows and columns if there is empty position or not
+    for row in 0..BOARD_MAX_INDEX
+        for col in 0..BOARD_MAX_INDEX
+            if @board[row][col]==EMPTY_POS
+                return false
+            end
+        end
+
+    end
+    # if board is full
+    return true
+
 end
